@@ -3,17 +3,21 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Url shortening Tool</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
 </head>
 <body>
 
+<p th:if="${error}" th:text="${error}" class="alert alert-danger"></p>
+<p th:if="${success}" th:text="${success}" class="alert alert-success"></p>
 
-<form>
-	<label for="url"></label>
-	<input id="url">
-	<label for="alias"></label>
-	<input id="alias">
+<form th:action="@{/save-link}" method="post" th:object="${newAlias}">
+	<label for="url">URL</label>
+	<input type="text" id="url" th:field="*{url}" th:placeholder="${newAlias.url}">
+	<label for="alias">Alias</label>
+	<input type="text" id="alias" th:field="*{alias}" th:placeholder="${newAlias.alias}">
 	<button type="submit">Submit</button>
-
 </form>
 
 
