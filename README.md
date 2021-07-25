@@ -20,12 +20,12 @@
 - [JavaScript](javascript.md)
 - [Embedded](embedded.md)
 
-
+---
 - Solution:
 
-SELECT name 
-FROM applicants 
-WHERE country='Czech Republic'
-ORDER BY age ASC
+SELECT name <br />
+FROM applicants <br />
+WHERE country='Czech Republic' <br />
+ORDER BY age ASC <br />
 LIMIT 5;
-
+---
