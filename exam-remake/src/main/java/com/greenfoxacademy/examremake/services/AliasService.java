@@ -1,6 +1,7 @@
 package com.greenfoxacademy.examremake.services;
 
 import com.greenfoxacademy.examremake.models.UniqueAlias;
+import java.util.List;
 
 public interface AliasService {
   UniqueAlias save(UniqueAlias newUniqueAlias);
@@ -8,4 +9,12 @@ public interface AliasService {
   boolean existsUniqueAliasByAlias(String alias);
 
   UniqueAlias incrementHitCount(String alias);
+
+  List<UniqueAlias> findAll();
+
+  boolean existsUniqueAliasById(Long id);
+
+  UniqueAlias findUniqueAliasById(Long id);
+
+  void deleteUniqueAliasById(Long id);
 }

@@ -2,6 +2,7 @@ package com.greenfoxacademy.examremake.services;
 
 import com.greenfoxacademy.examremake.models.UniqueAlias;
 import com.greenfoxacademy.examremake.repositories.AliasRepository;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,5 +28,25 @@ public class AliasServiceImpl implements AliasService {
     tmpAlias.setHitCount(tmpAlias.getHitCount() + 1);
     aliasRepo.save(tmpAlias);
     return tmpAlias;
+  }
+
+  @Override
+  public List<UniqueAlias> findAll() {
+    return aliasRepo.findAll();
+  }
+
+  @Override
+  public boolean existsUniqueAliasById(Long id) {
+    return aliasRepo.existsUniqueAliasById(id);
+  }
+
+  @Override
+  public UniqueAlias findUniqueAliasById(Long id) {
+    return aliasRepo.findById(id).get();
+  }
+
+  @Override
+  public void deleteUniqueAliasById(Long id) {
+    aliasRepo.deleteById(id);
   }
 }

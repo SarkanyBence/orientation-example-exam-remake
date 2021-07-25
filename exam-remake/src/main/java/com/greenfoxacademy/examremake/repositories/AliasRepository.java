@@ -8,6 +8,9 @@ import org.springframework.stereotype.Repository;
 public interface AliasRepository extends JpaRepository<UniqueAlias, Long> {
 
   boolean existsUniqueAliasByAlias(String alias);
+  boolean existsUniqueAliasById(Long id);
 
   UniqueAlias findUniqueAliasByAlias(String alias);
+
+  UniqueAlias findUniqueAliasById(Long id);
 }
