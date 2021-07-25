@@ -9,8 +9,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class AliasServiceImpl implements AliasService {
 
-  @Autowired
-  private AliasRepository aliasRepo;
+  private final AliasRepository aliasRepo;
+
+  public AliasServiceImpl(AliasRepository aliasRepo) {
+    this.aliasRepo = aliasRepo;
+  }
 
   @Override
   public UniqueAlias save(UniqueAlias newUniqueAlias) {
@@ -36,8 +39,8 @@ public class AliasServiceImpl implements AliasService {
   }
 
   @Override
-  public boolean existsUniqueAliasById(Long id) {
-    return aliasRepo.existsUniqueAliasById(id);
+  public boolean existsById(Long id) {
+    return aliasRepo.existsById(id);
   }
 
   @Override

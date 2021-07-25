@@ -12,7 +12,7 @@ public interface AliasService {
 
   List<UniqueAlias> findAll();
 
-  boolean existsUniqueAliasById(Long id);
+  boolean existsById(Long id);
 
   UniqueAlias findUniqueAliasById(Long id);
 

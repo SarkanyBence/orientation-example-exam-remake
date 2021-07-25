@@ -33,7 +33,7 @@ public class RestController {
   public ResponseEntity<?> deleteAlias(@PathVariable(required = false) Long id,
                                        @RequestBody(required = false) CodeDto secretCode) {
 
-    if (secretCode.getSecretCode() == null || aliasService.existsUniqueAliasById(id)) {
+    if (secretCode.getSecretCode() == null || !aliasService.existsById(id)) {
       return ResponseEntity.notFound().build();
     }
     UniqueAlias tmpAlias = aliasService.findUniqueAliasById(id);
